@@ -1,0 +1,52 @@
+{% include "navbar.html" %}
+
+    <div class="top">
+        <img src="static/img/library1.jpg" class="title-image" alt="Starfield Library in Seoul">
+        </div>
+        <div class="title-text">
+            <h1>Literaturgesellschaft FEU</h1>
+            <h2>Frühstück am Ende des Universums</h2>
+        </div>
+    <div class="wrapper">
+    {% for blog_post in posts: %}
+        <div class=" row features-row">
+            <div class="col-lg-3 col-md-12">
+            <div class="card text-card">
+            </div>
+            </div>
+            <div class="col-lg-3 col-md-12">
+            <div class="card text-card">
+                <h2 class="book-title">{{blog_post["title"]}}</h2>
+                <h3 class="author">{{blog_post["subtitle"]}}</h3>
+            </div>
+            </div>
+             <div class="col-lg-3 col-md-12">
+            <div class="card image-card">
+                <a href="{{url_for('posts',  num = blog_post['id'])}}"> <img src ="{{blog_post['image']}}" class="image-link"></a>
+            </div>
+             </div>
+            <div class="col-lg-3 col-md-12">
+            <div class="card text-card">
+            </div>
+            </div>
+    </div>
+    {% endfor %}
+
+</div>
+<footer>
+    <p>© {{year}} build by Melina Dändliker</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+  </body>
+
+</html>
+
+
+
+
+
+
+
+
